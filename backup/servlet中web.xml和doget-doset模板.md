@@ -39,21 +39,32 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
 
-    // 处理 GET 请求
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        response.getWriter().println("<h1>Hello, this is GET response!</h1>");
-    }
 
-    // 处理 POST 请求
-    @Override
+
+
+package com.hspedu.servlet;
+import com.hspedu.utils.WebUtils;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class CalServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String name = request.getParameter("name"); // 获取表单参数
-        response.getWriter().println("<h1>Hello, " + name + "! This is POST response!</h1>");
+     
+    }
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        doPost(request, response);
     }
 }
 

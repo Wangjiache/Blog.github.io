@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>个人博客</title><link>https://Wangjiache.github.io/Blog.github.io</link><description>个人技术博客</description><copyright>个人博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Wangjiache.github.io/Blog.github.io</link></image><lastBuildDate>Mon, 22 Dec 2025 14:01:50 +0000</lastBuildDate><managingEditor>个人博客</managingEditor><ttl>60</ttl><webMaster>个人博客</webMaster><item><title>Java的反射</title><link>https://Wangjiache.github.io/Blog.github.io/post/Java-de-fan-she.html</link><description>**反射 = 在“运行期”获取类的信息，并操作类的结构（属性、方法、构造器）的一种机制**
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>个人博客</title><link>https://Wangjiache.github.io/Blog.github.io</link><description>个人技术博客</description><copyright>个人博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Wangjiache.github.io/Blog.github.io</link></image><lastBuildDate>Mon, 22 Dec 2025 14:14:49 +0000</lastBuildDate><managingEditor>个人博客</managingEditor><ttl>60</ttl><webMaster>个人博客</webMaster><item><title>Java的反射</title><link>https://Wangjiache.github.io/Blog.github.io/post/Java-de-fan-she.html</link><description>**反射 = 在“运行期”获取类的信息，并操作类的结构（属性、方法、构造器）的一种机制**
 Java 中，每一个类在 JVM 里，都会有一个对应的 Class 对象
 Class&lt;Person&gt; c = Person.class;
 
@@ -120,21 +120,32 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet('/hello')
 public class HelloServlet extends HttpServlet {
 
-    // 处理 GET 请求
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType('text/html;charset=UTF-8');
-        response.getWriter().println('&lt;h1&gt;Hello, this is GET response!&lt;/h1&gt;');
-    }
 
-    // 处理 POST 请求
-    @Override
+
+
+package com.hspedu.servlet;
+import com.hspedu.utils.WebUtils;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+public class CalServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType('text/html;charset=UTF-8');
-        String name = request.getParameter('name'); // 获取表单参数
-        response.getWriter().println('&lt;h1&gt;Hello, ' + name + '! This is POST response!&lt;/h1&gt;');
+     
+    }
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        doPost(request, response);
     }
 }
 
